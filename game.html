@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Riddle Generator</title>
+  <link rel="stylesheet" href="css/stylesReal.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <header>
+    <h1>India Riddle Generator</h1>
+  </header>
+    <a href="blankpage.html">Back to Scratch Page</a>
+  <div id="riddle-container">
+    <h2>Can you guess the answer?</h2>
+
+    <!-- Riddle Section -->
+    <div class="riddle">
+      <p id="riddle-text"></p>
+      <input type="text" id="user-answer" placeholder="Type your answer here">
+      <button onclick="checkAnswer()">Check Answer</button>
+      <p id="result"></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 India Riddle Generator</p>
+  </footer>
+
+  <script>
+    // Array of riddles with answers related to India
+    const riddles = [
+      {
+        riddle: "I am the symbol of eternal love, made of white marble and visited by millions of people each year. What am I?",
+        answer: "Taj Mahal"
+      },
+      {
+        riddle: "I am a river that is considered holy, and my waters are believed to cleanse sins. What is my name?",
+        answer: "Ganges"
+      },
+      {
+        riddle: "I am the largest cricket stadium in the world, located in Ahmedabad. What am I?",
+        answer: "Narendra Modi Stadium"
+      },
+      {
+        riddle: "I am a type of spicy, flat bread that is commonly served with curries in India. What am I?",
+        answer: "Naan"
+      },
+      {
+        riddle: "I am a festival that celebrates the triumph of good over evil and is known for my colorful powder. What am I?",
+        answer: "Holi"
+      },
+      {
+        riddle: "I am a famous Indian dish, a stew made with lentils and spices, and often served with rice. What am I?",
+        answer: "Dal"
+      },
+      {
+        riddle: "I am a majestic structure located in Agra, built by Shah Jahan in memory of his wife. What am I?",
+        answer: "Taj Mahal"
+      },
+      {
+        riddle: "I am the tallest mountain range in the world, and I lie to the north of India. What am I?",
+        answer: "Himalayas"
+      },
+      {
+        riddle: "I am the capital city of India, known for my rich history and political significance. What city am I?",
+        answer: "New Delhi"
+      },
+      {
+        riddle: "I am an ancient language of India, often used in Hindu religious texts. What am I?",
+        answer: "Sanskrit"
+      }
+    ];
+
+    // Function to pick a random riddle from the array
+    function getRandomRiddle() {
+      const randomIndex = Math.floor(Math.random() * riddles.length);
+      return riddles[randomIndex];
+    }
+
+    // Display a random riddle when the page loads
+    const selectedRiddle = getRandomRiddle();
+    document.getElementById('riddle-text').textContent = selectedRiddle.riddle;
+
+    // Function to check if the user's answer is correct
+    function checkAnswer() {
+      const userAnswer = document.getElementById('user-answer').value.trim().toLowerCase();
+      const result = document.getElementById('result');
+
+      if (userAnswer === selectedRiddle.answer.toLowerCase()) {
+        result.textContent = "Correct! Well done!";
+        result.style.color = "green";
+      } else {
+        result.textContent = `Wrong! The correct answer is: ${selectedRiddle.answer}`;
+        result.style.color = "red";
+      }
+    }
+  </script>
+    <p>Refresh the page to play again!</p>
+
+</body>
+</html>

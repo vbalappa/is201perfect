@@ -1,0 +1,32 @@
+/*because I didn't like how the unordered lists would have bullet points*/
+ul {
+  list-style-type: none !important;
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: #333333
+}
+
+a:link {
+  color: darkcyan;
+}
+a:hover {
+  color: #e26a82;
+}
+a:active {
+  color: firebrick
+}
+.section1 {
+  height: 650px;
+  background-color: #e5d0d0;
+}
+.section2 {
+  height: 450px;
+  background-color: #f0f0d7;
+}
+.section3 {
+  height: 500px;
+  background-color: #f4c3c3;
+}
